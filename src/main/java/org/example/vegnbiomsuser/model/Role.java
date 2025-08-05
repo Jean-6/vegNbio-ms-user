@@ -2,13 +2,17 @@ package org.example.vegnbiomsuser.model;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
+@NoArgsConstructor
 public class Role {
     @Id
     private String id;
     private ERole role;
+
+    public Role(ERole role){
+        this.role = role;
+    }
 }
